@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Modern. | Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="images/serum.jpg" alt="The Modern Logo" class="logo-img">
+      <span class="brand-name">The Modern.</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="thankyou.html">Thank You</a></li>
+    </ul>
+  </nav>
+  <!-- ========== END NAVIGATION ========== -->
+
+
+  <!-- ========== ORDER PAGE HERO ========== -->
+  <div class="order-hero">
+    <h1>Place Your Order</h1>
+    <p>Select your products and fill in your details below</p>
+  </div>
+  <!-- ========== END ORDER HERO ========== -->
+
+
+  <!-- ========== ORDER SECTION ========== -->
+  <!--
+    FORM ACTION explanation:
+    action="thankyou.html" means when the user clicks Submit,
+    the browser goes to the Thank You page.
+    This is how HTML forms work without a server.
+    method="get" is used here - simple and works for our purpose.
+  -->
+  <section class="order-section">
+
+    <!-- LEFT SIDE: Product list to choose from -->
+    <div class="order-products">
+      <h2>Select Products</h2>
+
+      <!-- PRODUCT 1: Serum -->
+      <div class="order-item">
+        <img src="images/serum.jpg" alt="Serum" class="order-item-img">
+        <div class="order-item-info">
+          <h4>Hyaluronic Acid Serum</h4>
+          <p>Deep hydration with 2% HA + B5</p>
+          <!-- Quantity control - minus, number, plus -->
+          <!-- These buttons are HTML only - display purpose -->
+          <div class="qty-control">
+            <button class="qty-btn" type="button">−</button>
+            <span class="qty-display">1</span>
+            <button class="qty-btn" type="button">+</button>
+          </div>
+        </div>
+        <span class="order-item-price">Rs. 1,500</span>
+      </div>
+
+      <!-- PRODUCT 2: Moisturizer -->
+      <div class="order-item">
+        <img src="images/moisturizer.jpg" alt="Moisturizer" class="order-item-img">
+        <div class="order-item-info">
+          <h4>Natural Moisturizer</h4>
+          <p>24-hour hydration. Ultra-lightweight.</p>
+          <div class="qty-control">
+            <button class="qty-btn" type="button">−</button>
+            <span class="qty-display">1</span>
+            <button class="qty-btn" type="button">+</button>
+          </div>
+        </div>
+        <span class="order-item-price">Rs. 1,000</span>
+      </div>
+
+      <!-- PRODUCT 3: Sunscreen -->
+      <div class="order-item">
+        <img src="images/sunscreen.jpg" alt="Sunscreen" class="order-item-img">
+        <div class="order-item-info">
+          <h4>UV Filters SPF 45 Sunscreen</h4>
+          <p>Broad spectrum UVA/UVB PA++++</p>
+          <div class="qty-control">
+            <button class="qty-btn" type="button">−</button>
+            <span class="qty-display">1</span>
+            <button class="qty-btn" type="button">+</button>
+          </div>
+        </div>
+        <span class="order-item-price">Rs. 1,200</span>
+      </div>
+
+    </div>
+    <!-- END LEFT SIDE -->
+
+
+    <!-- RIGHT SIDE: Customer details form -->
+    <div class="order-form-box">
+      <h2>Your Details</h2>
+
+      <!-- Form goes to thankyou.html on submit -->
+      <form action="thankyou.html" method="get">
+
+        <div class="form-group">
+          <label for="o-name">Full Name</label>
+          <input type="text" id="o-name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="o-email">Email Address</label>
+          <input type="email" id="o-email" name="email" placeholder="yourname@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="o-phone">Phone Number</label>
+          <input type="tel" id="o-phone" name="phone" placeholder="+92 300 0000000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="o-address">Delivery Address</label>
+          <!-- textarea for address - more space to write -->
+          <textarea id="o-address" name="address" placeholder="House No, Street, City" style="height:90px;" required></textarea>
+        </div>
+
+        <!-- Submit order button -->
+        <button type="submit" class="submit-btn">Place Order</button>
+
+      </form>
+    </div>
+    <!-- END RIGHT SIDE -->
+
+  </section>
+  <!-- ========== END ORDER SECTION ========== -->
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">The Modern.</span>
+        <p>Skincare for you, from us with care.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="thankyou.html">Thank You</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="index.html">Facebook</a></li>
+          <li><a href="index.html">Instagram</a></li>
+          <li><a href="index.html">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© The Modern 2026. All Rights Reserved. Website created as a project for Web Engineering 1 class.</p>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+</body>
+</html>
