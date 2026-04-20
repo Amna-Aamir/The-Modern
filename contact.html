@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Modern. | Contact Us</title>
+  <!-- Same CSS file used on all pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION BAR (same on all pages) ========== -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="images/serum.jpg" alt="The Modern Logo" class="logo-img">
+      <span class="brand-name">The Modern.</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="order.html">Order</a></li>
+      <!-- active class highlights current page link -->
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+      <li><a href="thankyou.html">Thank You</a></li>
+    </ul>
+  </nav>
+  <!-- ========== END NAVIGATION ========== -->
+
+
+  <!-- ========== CONTACT HERO ========== -->
+  <!-- Dark banner at the top of contact page -->
+  <div class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you. Fill in the form below and we will get back to you.</p>
+  </div>
+  <!-- ========== END CONTACT HERO ========== -->
+
+
+  <!-- ========== CONTACT FORM SECTION ========== -->
+  <section class="contact-form-section">
+
+    <!-- 
+      FORM EXPLANATION FOR PRESENTATION:
+      - action="mailto:" sends form data to an email address
+      - method="post" means data is sent securely
+      - enctype is required for email forms to work correctly
+      This is the simplest way to collect form data without a server.
+    -->
+    <form
+      class="contact-form"
+      action="mailto:amnaaamir2005@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
+
+      <!-- Name field -->
+      <div class="form-group">
+        <!-- label 'for' must match input 'id' - this links them -->
+        <label for="name">Full Name</label>
+        <!-- required = user cannot submit without filling this -->
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+
+      <!-- Gmail field -->
+      <div class="form-group">
+        <label for="email">Gmail Address</label>
+        <!-- type="email" = browser checks it is a valid email format -->
+        <input type="email" id="email" name="email" placeholder="yourname@gmail.com" required>
+      </div>
+
+      <!-- Phone number field -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <!-- type="tel" = shows number keyboard on mobile phones -->
+        <input type="tel" id="phone" name="phone" placeholder="+92 300 0000000" required>
+      </div>
+
+      <!-- Address field -->
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Your delivery address" required>
+      </div>
+
+      <!-- Message field -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <!-- textarea = big text box for longer messages -->
+        <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+      </div>
+
+      <!-- Submit button - clicking this sends the form -->
+      <button type="submit" class="submit-btn">Send Message</button>
+
+    </form>
+
+  </section>
+  <!-- ========== END CONTACT FORM ========== -->
+
+
+  <!-- ========== FOOTER (same on all pages) ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">The Modern.</span>
+        <p>Skincare for you, from us with care.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="thankyou.html">Thank You</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="index.html">Facebook</a></li>
+          <li><a href="index.html">Instagram</a></li>
+          <li><a href="index.html">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© The Modern 2026. All Rights Reserved. Website created as a project for Web Engineering 1 class.</p>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+</body>
+</html>

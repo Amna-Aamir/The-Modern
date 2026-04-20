@@ -1,0 +1,930 @@
+/* ================================================
+   THE MODERN. - Main Stylesheet (style.css)
+   This one CSS file styles ALL four pages
+   ================================================ */
+
+/* ---- GOOGLE FONTS ----
+   We import a clean, elegant font from Google.
+   'font-face' means the style/look of the text. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap');
+
+/* ---- CSS VARIABLES ----
+   :root means we define colours once here.
+   Then we use var(--name) anywhere in the file.
+   If we want to change a colour, we change it only here. */
+:root {
+  --black:   #111111;      /* Almost black - for text */
+  --white:   #FAFAF8;      /* Warm white - for backgrounds */
+  --cream:   #F2EDE6;      /* Warm cream - for sections */
+  --gold:    #C9A84C;      /* Gold accent - for highlights */
+  --grey:    #888888;      /* Grey - for small text */
+  --dark:    #1A1A1A;      /* Dark background */
+  --border:  #E0D9D0;      /* Light border colour */
+}
+
+/* ---- RESET ----
+   * means 'apply to everything'.
+   box-sizing makes width/height include padding.
+   margin:0 removes default browser spacing. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- BODY (whole page) ---- */
+body {
+  font-family: 'Jost', sans-serif;  /* Our chosen font */
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.7;       /* Space between lines of text */
+}
+
+/* ---- LINKS ----
+   Remove the default blue underline from all links */
+a {
+  text-decoration: none;
+  color: inherit;         /* 'inherit' means use parent's colour */
+}
+
+/* ---- IMAGES ----
+   max-width:100% means images never go bigger than their container */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================================================
+   NAVIGATION BAR
+   ================================================ */
+
+/* The nav bar container */
+.navbar {
+  position: sticky;       /* STICKY = stays on screen when you scroll */
+  top: 0;                 /* Stick to the top of the screen */
+  z-index: 100;           /* z-index makes it appear on top of other elements */
+  display: flex;          /* flex = puts logo and links side by side */
+  justify-content: space-between;  /* space-between = logo left, links right */
+  align-items: center;    /* align-items = centre vertically */
+  padding: 18px 60px;     /* space inside the navbar */
+  background-color: var(--black);  /* Dark background for navbar */
+  border-bottom: 1px solid #333;
+}
+
+/* Logo area (left side of navbar) */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;              /* gap = space between logo image and text */
+}
+
+/* The small logo image in navbar */
+.logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;     /* Makes it a circle */
+  object-fit: cover;      /* Crops image to fill the circle */
+  filter: grayscale(30%); /* Slight black & white effect */
+}
+
+/* The brand name text "The Modern." */
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 2px;    /* Spacing between letters */
+}
+
+/* The list of nav links (right side) */
+.nav-links {
+  list-style: none;       /* Remove bullet points from list */
+  display: flex;
+  gap: 36px;
+}
+
+/* Each nav link */
+.nav-links a {
+  color: #CCCCCC;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;   /* Makes text ALL CAPS */
+  transition: color 0.3s;      /* Smooth colour change on hover */
+}
+
+/* When mouse hovers over a nav link */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+/* ================================================
+   HERO / HEADER SECTION
+   ================================================ */
+
+.hero {
+  min-height: 88vh;       /* vh = viewport height. 88vh = 88% of screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Gradient background: dark to slightly lighter */
+  background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #1A1A1A 100%);
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;        /* Hides anything that goes outside this box */
+}
+
+/* Decorative background pattern - purely CSS, no image needed */
+.hero::before {
+  content: '';             /* Empty content - just for decoration */
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 40%);
+  pointer-events: none;    /* Clicks go through this decoration */
+}
+
+/* The text content inside hero */
+.hero-content {
+  position: relative;      /* Needed to appear above the ::before decoration */
+  max-width: 700px;
+}
+
+/* Main hero title */
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);  /* clamp = min, preferred, max size */
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* The gold-coloured second line of hero title */
+.hero-title.accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Small text under the big title */
+.hero-sub {
+  font-size: 1rem;
+  color: #AAAAAA;
+  margin: 24px 0 40px;
+  letter-spacing: 1px;
+}
+
+/* The "Shop Now" button */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: var(--gold);
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover effect on button */
+.btn-primary:hover {
+  background-color: #B8962D;
+  transform: translateY(-2px);  /* Moves button 2px upward on hover */
+}
+
+/* ================================================
+   SECTION TITLES (used across multiple sections)
+   ================================================ */
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* White version for dark backgrounds */
+.section-title.light {
+  color: var(--white);
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--grey);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 60px;
+}
+
+/* ================================================
+   PRODUCTS SECTION
+   ================================================ */
+
+.products-section {
+  padding: 100px 60px;
+  background-color: var(--cream);
+}
+
+/* Container for 3 product cards */
+.products-grid {
+  display: flex;           /* flex = side by side layout */
+  justify-content: center;
+  align-items: flex-end;   /* flex-end = cards aligned at their bottom */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;          /* auto = centre this container */
+  flex-wrap: wrap;         /* wrap = on small screens, cards go to next line */
+}
+
+/* EACH product card */
+.product-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  padding: 30px 24px 28px;
+  width: 300px;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* box-shadow = shadow behind the card */
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+/* MIDDLE card sits higher (slightly on top as requested) */
+.card-mid {
+  transform: translateY(-30px);  /* Move 30px upward */
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+/* Hover effect: card lifts up */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+/* Middle card hover */
+.card-mid:hover {
+  transform: translateY(-38px);
+}
+
+/* Image container inside card */
+.product-img-box {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;         /* Hides part of image that goes outside */
+  margin-bottom: 24px;
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product image itself */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* contain = show full image without cropping */
+}
+
+/* Text area inside product card */
+.product-info {
+  text-align: left;
+}
+
+/* Product name text */
+.product-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+
+/* Small description text */
+.product-desc {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin-bottom: 14px;
+}
+
+/* Price text */
+.product-price {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+/* "Order Now" button inside card */
+.order-btn {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+}
+
+/* ================================================
+   WHY CHOOSE US SECTION
+   ================================================ */
+
+.why-section {
+  padding: 100px 60px;
+  background-color: var(--white);
+}
+
+/* 6 cards in a grid - 3 per row on desktop */
+.why-grid {
+  display: grid;
+  /* grid-template-columns = how many columns and their size */
+  /* repeat(3, 1fr) = 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Each "Why" card */
+.why-card {
+  background-color: var(--cream);
+  border: 1px solid var(--border);
+  padding: 36px 30px;
+  transition: transform 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+}
+
+/* The decorative symbol/icon */
+.why-icon {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.why-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.8;
+}
+
+/* ================================================
+   WHO ARE WE SECTION
+   ================================================ */
+
+.who-section {
+  background-color: var(--dark);   /* Dark background */
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.who-inner {
+  max-width: 700px;
+  margin: 0 auto;         /* Centre the text block */
+}
+
+.who-inner p {
+  color: #BBBBBB;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* ================================================
+   MISSION SECTION
+   ================================================ */
+
+.mission-section {
+  padding: 100px 60px;
+  background-color: var(--cream);
+}
+
+/* 3 mission boxes in a row */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Each mission box */
+.mission-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  padding: 44px 34px;
+  text-align: center;
+  border-top: 3px solid var(--gold);  /* Gold top border accent */
+}
+
+/* The big number "1." "2." "3." */
+.mission-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.mission-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--black);
+}
+
+.mission-card p {
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.8;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 70px 60px 0;
+}
+
+/* Footer columns side by side */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;         /* On mobile, columns stack vertically */
+  margin-bottom: 50px;
+}
+
+/* Left brand column */
+.footer-brand {
+  max-width: 280px;
+}
+
+.footer-brand .brand-name {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: #AAAAAA;
+  line-height: 1.8;
+}
+
+/* Footer column headings */
+.footer-links h4,
+.footer-social h4 {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* Footer link lists */
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-bottom: 12px;
+}
+
+.footer-links a,
+.footer-social a {
+  font-size: 0.9rem;
+  color: #AAAAAA;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: var(--gold);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding: 22px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #666666;
+  letter-spacing: 0.5px;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   Media queries = rules for smaller screens.
+   When screen is smaller than 768px (tablet/mobile),
+   these rules apply instead.
+   ================================================ */
+
+@media (max-width: 768px) {
+
+  /* Navbar stacks logo and links vertically */
+  .navbar {
+    flex-direction: column;
+    padding: 16px 20px;
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Hero text smaller on mobile */
+  .hero {
+    padding: 60px 24px;
+    min-height: 70vh;
+  }
+
+  /* Products stack vertically on mobile */
+  .products-section {
+    padding: 60px 20px;
+  }
+
+  .products-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove the card-mid offset on mobile */
+  .card-mid {
+    transform: none;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* Why grid becomes 1 column on mobile */
+  .why-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .why-section,
+  .who-section,
+  .mission-section {
+    padding: 60px 20px;
+  }
+
+  /* Mission grid becomes 1 column on mobile */
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer stacks vertically */
+  .footer {
+    padding: 50px 24px 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+/* ================================================
+   CONTACT PAGE SPECIFIC STYLES
+   ================================================ */
+
+.contact-hero {
+  background-color: var(--dark);
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--white);
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.contact-hero p {
+  color: #AAAAAA;
+  font-size: 1rem;
+}
+
+/* Contact form section */
+.contact-form-section {
+  padding: 80px 60px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+/* The form box */
+.contact-form {
+  width: 100%;
+  max-width: 580px;
+}
+
+/* Each form group = label + input together */
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* Label (the text above each input) */
+.form-group label {
+  display: block;           /* block = each label on its own line */
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Input fields and textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background-color: var(--cream);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: var(--black);
+  outline: none;            /* Remove default blue border on focus */
+  transition: border-color 0.3s;
+}
+
+/* When user clicks on input - highlight border */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  height: 140px;
+  resize: vertical;         /* User can resize textarea up/down only */
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 70px 24px;
+  }
+  .contact-form-section {
+    padding: 50px 24px;
+  }
+}
+
+/* ================================================
+   ORDER PAGE SPECIFIC STYLES
+   ================================================ */
+
+.order-hero {
+  background-color: var(--dark);
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.order-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white);
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.order-hero p {
+  color: #AAAAAA;
+  font-size: 0.95rem;
+}
+
+/* Order section layout */
+.order-section {
+  padding: 80px 60px;
+  background-color: var(--cream);
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Left side - product selection */
+.order-products {
+  flex: 1;
+  max-width: 500px;
+}
+
+.order-products h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: var(--black);
+}
+
+/* Each orderable product row */
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.order-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background-color: var(--cream);
+  padding: 6px;
+  flex-shrink: 0;          /* Don't shrink the image */
+}
+
+.order-item-info {
+  flex: 1;
+}
+
+.order-item-info h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.order-item-info p {
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+/* Quantity control (- number +) */
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Minus and Plus buttons */
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  background-color: var(--cream);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* No JS needed - these are just visual for HTML/CSS assignment */
+}
+
+.qty-display {
+  font-size: 0.95rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.order-item-price {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--black);
+  white-space: nowrap;      /* Prevent price wrapping to new line */
+}
+
+/* Right side - order form */
+.order-form-box {
+  flex: 1;
+  max-width: 440px;
+}
+
+.order-form-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .order-section {
+    padding: 50px 20px;
+    flex-direction: column;
+  }
+  .order-products,
+  .order-form-box {
+    max-width: 100%;
+  }
+  .order-hero {
+    padding: 60px 24px;
+  }
+}
+
+/* ================================================
+   THANK YOU PAGE STYLES
+   ================================================ */
+
+.thankyou-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 40px;
+  background-color: var(--cream);
+}
+
+.thankyou-box {
+  max-width: 560px;
+}
+
+/* Big checkmark */
+.thankyou-icon {
+  font-size: 3.5rem;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.thankyou-box h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  color: var(--black);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.thankyou-box p {
+  font-size: 1rem;
+  color: var(--grey);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+/* "Back to Home" button */
+.btn-outline {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 36px;
+  border: 1px solid var(--black);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--black);
+  color: var(--white);
+}

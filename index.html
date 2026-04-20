@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This tells the browser what kind of document this is -->
+  <meta charset="UTF-8">
+  <!-- This makes the website look correct on mobile phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Modern. | Skincare</title>
+  <!-- Linking our CSS file (style.css) to this HTML page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <!-- nav = navigation bar at the top of every page -->
+  <!-- class="sticky" means it stays fixed when you scroll -->
+  <nav class="navbar">
+
+    <!-- LEFT SIDE: Logo + Brand Name -->
+    <div class="nav-logo">
+      <!-- Logo image - no bottle, clean white background -->
+      <img src="images/serum.jpg" alt="The Modern Logo" class="logo-img">
+      <span class="brand-name">The Modern.</span>
+    </div>
+
+    <!-- RIGHT SIDE: Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="thankyou.html">Thank You</a></li>
+    </ul>
+
+  </nav>
+  <!-- ========== END NAVIGATION BAR ========== -->
+
+
+  <!-- ========== HEADER / HERO SECTION ========== -->
+  <!-- This is the big banner section at the top -->
+  <header class="hero">
+    <div class="hero-content">
+      <!-- Main heading - the slogan -->
+      <h1 class="hero-title">Skincare For You,</h1>
+      <h1 class="hero-title accent">You From Us With Care.</h1>
+      <!-- Small description under the slogan -->
+      <p class="hero-sub">Science-backed formulas. Clean ingredients. Real results.</p>
+      <!-- Button that takes user to order page -->
+      <a href="order.html" class="btn-primary">Shop Now</a>
+    </div>
+  </header>
+  <!-- ========== END HEADER ========== -->
+
+
+  <!-- ========== PRODUCTS SECTION ========== -->
+  <!-- This section shows our 3 products in cards -->
+  <section class="products-section">
+    <h2 class="section-title">Our Products</h2>
+    <p class="section-sub">Formulations inspired by contemporary science</p>
+
+    <!-- Container that holds all 3 product cards side by side -->
+    <div class="products-grid">
+
+      <!-- PRODUCT CARD 1: Serum (LEFT) - positioned slightly lower -->
+      <!-- Clicking anywhere on this card goes to order.html -->
+      <a href="order.html" class="product-card card-left">
+        <div class="product-img-box">
+          <img src="images/serum.jpg" alt="Hyaluronic Acid Serum" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Hyaluronic Acid Serum</h3>
+          <p class="product-desc">Deep hydration with 2% HA + B5</p>
+          <!-- Price of the product -->
+          <span class="product-price">Rs. 1,500</span>
+          <span class="order-btn">Order Now →</span>
+        </div>
+      </a>
+
+      <!-- PRODUCT CARD 2: Moisturizer (MIDDLE) - slightly on top -->
+      <a href="order.html" class="product-card card-mid">
+        <div class="product-img-box">
+          <img src="images/moisturizer.jpg" alt="Natural Moisturizer" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Natural Moisturizer</h3>
+          <p class="product-desc">24-hour hydration. Ultra-lightweight.</p>
+          <span class="product-price">Rs. 1,000</span>
+          <span class="order-btn">Order Now →</span>
+        </div>
+      </a>
+
+      <!-- PRODUCT CARD 3: Sunscreen (RIGHT) -->
+      <a href="order.html" class="product-card card-right">
+        <div class="product-img-box">
+          <img src="images/sunscreen.jpg" alt="SPF 45 Sunscreen" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">UV Filters SPF 45 Sunscreen</h3>
+          <p class="product-desc">Broad spectrum UVA/UVB PA++++</p>
+          <span class="product-price">Rs. 1,200</span>
+          <span class="order-btn">Order Now →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+  <!-- ========== END PRODUCTS SECTION ========== -->
+
+
+  <!-- ========== WHY CHOOSE US SECTION ========== -->
+  <section class="why-section">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <!-- Grid of 3 reasons side by side in boxes -->
+    <div class="why-grid">
+
+      <div class="why-card">
+        <!-- Simple icon using text/symbol - no image needed -->
+        <div class="why-icon">✦</div>
+        <h3>Science-Backed Formulas</h3>
+        <p>Every product we make is built on clinical research. We do not add fillers, fragrances, or harmful chemicals. What you see on the label is exactly what goes on your skin.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">◈</div>
+        <h3>Honest Ingredients</h3>
+        <p>No hidden chemicals. No marketing fluff. We list every ingredient and explain what it does. Because you deserve to know exactly what you are putting on your face.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">◉</div>
+        <h3>Affordable Luxury</h3>
+        <p>Great skincare should not cost a fortune. We cut out the middleman and sell directly to you. Same quality as high-end brands. A price that makes sense for everyday use.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">⬡</div>
+        <h3>Dermatologist Tested</h3>
+        <p>Each formula goes through rigorous dermatological testing before reaching your hands. Safe for sensitive skin. Safe for all skin types. Proven to work.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">◆</div>
+        <h3>Sustainable Packaging</h3>
+        <p>We care about your skin and the planet. Our packaging uses minimal plastic and is fully recyclable. Beauty without guilt is what we stand for.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">●</div>
+        <h3>Real Results</h3>
+        <p>Our customers see visible improvements within 2 to 4 weeks of consistent use. We let our formulas speak for themselves, no filters required.</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ========== END WHY CHOOSE US ========== -->
+
+
+  <!-- ========== WHO WE ARE SECTION ========== -->
+  <section class="who-section">
+    <div class="who-inner">
+      <h2 class="section-title light">Who Are We?</h2>
+      <p>The Modern is a Pakistani skincare brand built by people who were tired of overpriced, overcomplicated skincare. We believe that effective skincare should be simple, transparent, and accessible to everyone.</p>
+      <p>Our team of scientists and skincare enthusiasts work together to create formulas that actually deliver. No celebrities. No gimmicks. Just skincare that works.</p>
+      <p>We are based in Pakistan and proud to bring international-quality skincare to your doorstep.</p>
+    </div>
+  </section>
+  <!-- ========== END WHO WE ARE ========== -->
+
+
+  <!-- ========== OUR MISSION SECTION ========== -->
+  <section class="mission-section">
+    <h2 class="section-title">Our Mission</h2>
+    <p class="section-sub">Three things we promise to every customer</p>
+
+    <!-- 3 mission boxes in a row -->
+    <div class="mission-grid">
+
+      <div class="mission-card">
+        <!-- Large number for visual style -->
+        <div class="mission-num">1.</div>
+        <h3>Transparency</h3>
+        <p>We tell you exactly what is in every bottle. No hidden ingredients. No secrets. Just honest skincare from honest people.</p>
+      </div>
+
+      <div class="mission-card">
+        <div class="mission-num">2.</div>
+        <h3>Efficacy</h3>
+        <p>Every formula must pass our performance test. If it does not work, it does not ship. We only sell products we believe in.</p>
+      </div>
+
+      <div class="mission-card">
+        <div class="mission-num">3.</div>
+        <h3>Accessibility</h3>
+        <p>Good skincare is for everyone. We keep our prices fair so that quality skincare is not a luxury only few can afford.</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ========== END MISSION SECTION ========== -->
+
+
+  <!-- ========== FOOTER ========== -->
+  <!-- footer = bottom section of every page -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <!-- Footer brand name -->
+      <div class="footer-brand">
+        <span class="brand-name">The Modern.</span>
+        <p>Skincare for you, from us with care.</p>
+      </div>
+
+      <!-- Footer navigation links (quick links) -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="thankyou.html">Thank You</a></li>
+        </ul>
+      </div>
+
+      <!-- Social media links - they go back to home page (as requested) -->
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <ul>
+          <!-- These links go back to index.html as per instruction -->
+          <li><a href="index.html">Facebook</a></li>
+          <li><a href="index.html">Instagram</a></li>
+          <li><a href="index.html">LinkedIn</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright line at the very bottom -->
+    <div class="footer-bottom">
+      <p>© The Modern 2026. All Rights Reserved. Website created as a project for Web Engineering 1 class.</p>
+    </div>
+
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+</body>
+</html>
